@@ -1,8 +1,8 @@
 #! /usr/bin/env node
-import askName from '..';
+import readLine from '..';
 
 console.log('Welcome to brain games!');
 
-const name = askName('May I have your name? ');
+const name = readLine('May I have your name? ');
 
 console.log(`Hi! ${name}`);
