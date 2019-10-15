@@ -19,14 +19,12 @@ const correctAnswer = (expression) => {
       firstValue += expression[i];
     } else { break; }
   }
-  
   for (let i = firstValue.length + 1; i < expression.length; i += 1) {
     if (expression[i] !== ' ') {
       secondValue += expression[i];
     } else { break; }
   }
-  
-  const min = Number(firstValue) < Number(secondValue) ? Number(firstValue) : Number(secondValue)
+  const min = Number(firstValue) < Number(secondValue) ? Number(firstValue) : Number(secondValue);
   let acc = min;
   for (let i = min; i >= 1; i -= 1) {
     if (Number(firstValue) % i === 0 && Number(secondValue) % i === 0) {
