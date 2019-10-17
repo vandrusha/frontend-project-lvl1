@@ -7,4 +7,7 @@ publish:
 lint:
 	npx eslint .
 
+install:
+	npm install
+
 .PHONY: test

@@ -1,7 +1,8 @@
 {
  "name": "vandrusha_front-end-project-lvl1",
- "version": "1.0.9",
- "description": "",
+ "version": "1.0.13",
+ "description": "This package contain os different cli  games. Check if number is even. Provide a calculation result. Find GCD of 2 numbers. Find missed number in progression. Check if number is prime",
+ "keywords": "brain, game, games, brain game, brain games, even, calc, gcd, progression, prime",
  "main": "index.js",
  "scripts": {
   "test": "echo \"Error: no test specified\" && exit 1",
@@ -22,8 +23,8 @@
  "author": "",
  "license": "ISC",
  "devDependencies": {
-  "@babel/cli": "^7.6.2",
-  "@babel/core": "^7.6.2",
+  "@babel/cli": "^7.6.4",
+  "@babel/core": "^7.6.4",
   "@babel/node": "^7.6.2",
   "@babel/preset-env": "^7.6.2",
   "babel-eslint": "^10.0.3",
@@ -32,14 +33,14 @@
   "eslint-config-airbnb-base": "^14.0.0",
   "eslint-plugin-babel": "^5.3.0",
   "eslint-plugin-import": "^2.18.2",
-  "eslint-plugin-jest": "^22.17.0",
+  "eslint-plugin-jest": "^22.19.0",
   "eslint-plugin-react": "^7.16.0",
   "jest": "^24.9.0",
   "jest-cli": "^24.9.0"
  },
  "dependencies": {
+  "hexlet-pairs": "^1.0.8",
   "npm": "^6.12.0",
-  "readline-sync": "^1.4.10",
-  "hexlet-pairs": "^1.0.8"
+  "readline-sync": "^1.4.10"
  }
 }
