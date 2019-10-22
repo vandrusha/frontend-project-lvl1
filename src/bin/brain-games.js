@@ -1,8 +1,4 @@
 #! /usr/bin/env node
-import readLine from '..';
+import runGame from '../games/games';
 
-console.log('Welcome to brain games!');
-
-const name = readLine('May I have your name? ');
-
-console.log(`Hi! ${name}`);
+runGame();
