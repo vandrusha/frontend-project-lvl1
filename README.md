@@ -7,4 +7,4 @@
 [![Build Status](https://travis-ci.org/vandrusha/frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/vandrusha/frontend-project-lvl1)
 
 Install package globally:
-<script src="https://asciinema.org/a/mXOB7KpTOxYv9n7ydGrPHMtuw" id="asciicast-14" async></script>
+[![asciicast](https://asciinema.org/a/mXOB7KpTOxYv9n7ydGrPHMtuw.png)](https://asciinema.org/a/mXOB7KpTOxYv9n7ydGrPHMtuw)
