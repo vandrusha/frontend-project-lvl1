@@ -11,7 +11,7 @@ const correctAnswer = (expression) => {
   let correct = 'yes';
   if (expression === 1) {
     correct = 'yes';
-  } else if (expression === 0 || expression === 2) {
+  } else if (expression === 0 || expression % 2 === 0) {
     correct = 'no';
   } else {
     for (let i = 2; i < expression / 2; i += 1) {
