@@ -1,17 +1,13 @@
-import readLine, { getRandomInt, game } from '..';
+import game from '..';
+import * as utils from '../utils';
 
-console.log('Welcome to the Brain Games \nWhat number is missing in the progression?');
-
-const name = readLine('May I have your name? ');
-
-console.log(`Hi! ${name}`);
 let hiddenNumber = '';
 const correctAnswer = () => hiddenNumber;
 const gameExpression = () => {
-  let a = getRandomInt(10);
-  const hiddenPosition = getRandomInt(9);
+  let a = utils.randInt(10);
+  const hiddenPosition = utils.randInt(9);
   let progressionString = '';
-  const d = getRandomInt(10) + 1;
+  const d = utils.randInt(10) + 1;
   for (let i = 0; i < 10; i += 1) {
     if (i !== hiddenPosition) {
       progressionString += `${a} `;
@@ -25,6 +21,6 @@ const gameExpression = () => {
   return progressionString;
 };
 
-const runGame = () => game(name, gameExpression, correctAnswer);
+const runGame = () => game('progression', gameExpression, correctAnswer);
 
 export default runGame;

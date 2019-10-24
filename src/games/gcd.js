@@ -1,13 +1,8 @@
 import { cons, car, cdr } from 'hexlet-pairs';
-import readLine, { getRandomInt, game } from '..';
+import game from '..';
+import * as utils from '../utils';
 
-console.log('Welcome to the Brain Games \nFind the greatest common divisor of given numbers.');
-
-const name = readLine('May I have your name? ');
-
-console.log(`Hi! ${name}`);
-
-const makePair = () => cons(getRandomInt(), getRandomInt());
+const makePair = () => cons(utils.getRandomInt(), utils.getRandomInt());
 const gameExpression = () => `${car(makePair())} ${cdr(makePair())}`;
 
 const correctAnswer = (expression) => {
@@ -34,6 +29,6 @@ const correctAnswer = (expression) => {
   return String(acc);
 };
 
-const runGame = () => game(name, gameExpression, correctAnswer);
+const runGame = () => game('gcd', gameExpression, correctAnswer);
 
 export default runGame;

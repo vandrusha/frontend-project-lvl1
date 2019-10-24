@@ -1,13 +1,8 @@
 import { cons, car, cdr } from 'hexlet-pairs';
-import readLine, { getRandomInt, randomOperation, game } from '..';
+import game from '..';
+import * as utils from '../utils';
 
-console.log('Welcome to the Brain Games \nWhat is the result of the expression?');
-
-const name = readLine('May I have your name? ');
-
-console.log(`Hi! ${name}`);
-
-const makePair = () => cons(getRandomInt(10), cons(randomOperation(), getRandomInt(10)));
+const makePair = () => cons(utils.randInt(10), cons(utils.randOperation(), utils.randInt(10)));
 const gameExpression = () => `${car(makePair())} ${car(cdr(makePair()))} ${cdr(cdr(makePair()))}`;
 
 const correctAnswer = (expression) => {
@@ -44,6 +39,6 @@ const correctAnswer = (expression) => {
   return String(result);
 };
 
-const runGame = () => game(name, gameExpression, correctAnswer);
+const runGame = () => game('calc', gameExpression, correctAnswer);
 
 export default runGame;
