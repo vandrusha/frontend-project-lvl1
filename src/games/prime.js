@@ -1,17 +1,12 @@
-import readLine, { getRandomInt, game } from '..';
+import game from '..';
+import * as utils from '../utils';
 
-console.log('Welcome to the Brain Games \nAnswer "yes" if given number is prime. Otherwise answer "no".');
-
-const name = readLine('May I have your name? ');
-
-console.log(`Hi! ${name}`);
-
-const gameExpression = () => getRandomInt();
+const gameExpression = () => utils.randInt();
 const correctAnswer = (expression) => {
   let correct = 'yes';
   if (expression === 1) {
     correct = 'yes';
-  } else if (expression === 0 || expression === 2) {
+  } else if (expression === 0 || expression % 2 === 0) {
     correct = 'no';
   } else {
     for (let i = 2; i < expression / 2; i += 1) {
@@ -24,6 +19,6 @@ const correctAnswer = (expression) => {
   return correct;
 };
 
-const runGame = () => game(name, gameExpression, correctAnswer);
+const runGame = () => game('prime', gameExpression, correctAnswer);
 
 export default runGame;

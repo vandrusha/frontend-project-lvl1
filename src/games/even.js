@@ -1,14 +1,10 @@
-import readLine, { getRandomInt, game } from '..';
+import game from '..';
+import * as utils from '../utils';
 
-console.log('Welcome to the Brain Games \nAnswer "yes" if the number is even, otherwise answer "no".');
+const gameExpression = () => utils.randomInt();
+const divisionBy = (divider) => (expression) => (expression % divider === 0 ? 'yes' : 'no');
+const correctAnswer = divisionBy(2);
 
-const name = readLine('May I have your name? ');
-
-console.log(`Hi! ${name}`);
-
-const gameExpression = () => getRandomInt();
-const correctAnswer = (expression) => (expression % 2 === 0 ? 'yes' : 'no');
-
-const runGame = () => game(name, gameExpression, correctAnswer);
+const runGame = () => game('even', gameExpression, correctAnswer);
 
 export default runGame;
