@@ -1,26 +1,29 @@
+import { cons } from 'hexlet-pairs';
 import game from '..';
 import * as utils from '../utils';
 
-let hiddenNumber = '';
-const correctAnswer = () => hiddenNumber;
+const gameDescription = 'What number is missing in the progression?';
+
 const gameExpression = () => {
+  let correctAnswer = '';
   let a = utils.randInt(10);
   const hiddenPosition = utils.randInt(9);
-  let progressionString = '';
+  let initialData = '';
   const d = utils.randInt(10) + 1;
   for (let i = 0; i < 10; i += 1) {
     if (i !== hiddenPosition) {
-      progressionString += `${a} `;
+      initialData += `${a} `;
       a += d;
     } else if (i === hiddenPosition) {
-      progressionString += '.. ';
-      hiddenNumber = String(a);
+      initialData += '.. ';
+      correctAnswer = String(a);
       a += d;
     }
   }
-  return progressionString;
+  const output = cons(initialData, correctAnswer);
+  return output;
 };
 
-const runGame = () => game('progression', gameExpression, correctAnswer);
+const runGame = () => game('progression', gameDescription, gameExpression);
 
 export default runGame;
