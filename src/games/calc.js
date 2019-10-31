@@ -2,28 +2,25 @@ import { cons, car, cdr } from 'hexlet-pairs';
 import game from '..';
 import * as utils from '../utils';
 
+const operations = '+-*';
+
 // get random operation
-const randOperation = () => {
-  const operations = '+-*';
-  return operations[utils.randInt(2)];
-};
+const randOperation = () => operations[utils.randInt(2)];
 
 const gameDescription = 'What is the result of the expression?';
 
 const gameExpression = () => {
-  const makePair = () => cons(utils.randInt(10), cons(randOperation(), utils.randInt(10)));
-  const initialData = `${car(makePair())} ${car(cdr(makePair()))} ${cdr(cdr(makePair()))}`;
+  const initialData = cons(utils.randInt(10), utils.randInt(10));
+  const operation = randOperation();
+  const gameQuestion = `${car(initialData)} ${operation} ${cdr(initialData)}`;
   const correctAnswer = (expression) => {
     let firstValue = '';
-    let operator = '';
     let secondValue = '';
     for (let i = 0; i < expression.length; i += 1) {
       if (expression[i] !== ' ') {
         firstValue += expression[i];
       } else { break; }
     }
-
-    operator = expression[firstValue.length + 1];
 
     for (let i = firstValue.length + 3; i < expression.length; i += 1) {
       if (expression[i] !== ' ') {
@@ -32,7 +29,7 @@ const gameExpression = () => {
     }
 
     let result;
-    switch (operator) {
+    switch (operation) {
       case '-':
         result = Number(firstValue) - Number(secondValue);
         break;
@@ -46,10 +43,10 @@ const gameExpression = () => {
     }
     return String(result);
   };
-  const output = cons(initialData, correctAnswer(initialData));
+  const output = cons(gameQuestion, correctAnswer(gameQuestion));
   return output;
 };
 
-const runGame = () => game('calc', gameDescription, gameExpression);
+const runGame = () => game(gameDescription, gameExpression);
 
 export default runGame;

@@ -6,24 +6,24 @@ const gameDescription = 'What number is missing in the progression?';
 
 const gameExpression = () => {
   let correctAnswer = '';
-  let a = utils.randInt(10);
+  let firstProgressionValue = utils.randInt(10);
   const hiddenPosition = utils.randInt(9);
-  let initialData = '';
-  const d = utils.randInt(10) + 1;
+  let gameQuestion = '';
+  const increment = utils.randInt(10, 1);
   for (let i = 0; i < 10; i += 1) {
     if (i !== hiddenPosition) {
-      initialData += `${a} `;
-      a += d;
+      gameQuestion += `${firstProgressionValue} `;
+      firstProgressionValue += increment;
     } else if (i === hiddenPosition) {
-      initialData += '.. ';
-      correctAnswer = String(a);
-      a += d;
+      gameQuestion += '.. ';
+      correctAnswer = String(firstProgressionValue);
+      firstProgressionValue += increment;
     }
   }
-  const output = cons(initialData, correctAnswer);
+  const output = cons(gameQuestion, correctAnswer);
   return output;
 };
 
-const runGame = () => game('progression', gameDescription, gameExpression);
+const runGame = () => game(gameDescription, gameExpression);
 
 export default runGame;

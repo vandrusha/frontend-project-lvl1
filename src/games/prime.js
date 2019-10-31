@@ -5,7 +5,7 @@ import * as utils from '../utils';
 const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const gameExpression = () => {
-  const initialData = utils.randInt();
+  const gameQuestion = utils.randInt();
   const correctAnswer = (expression) => {
     let correct = 'yes';
     if (expression === 1) {
@@ -22,10 +22,10 @@ const gameExpression = () => {
     }
     return correct;
   };
-  const output = cons(initialData, correctAnswer(initialData));
+  const output = cons(gameQuestion, correctAnswer(gameQuestion));
   return output;
 };
 
-const runGame = () => game('prime', gameDescription, gameExpression);
+const runGame = () => game(gameDescription, gameExpression);
 
 export default runGame;
