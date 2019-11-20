@@ -2,8 +2,6 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/55c41a9387572decd0e3/maintainability)](https://codeclimate.com/github/vandrusha/frontend-project-lvl1/maintainability)
 
-[![Test Coverage](https://api.codeclimate.com/v1/badges/55c41a9387572decd0e3/test_coverage)](https://codeclimate.com/github/vandrusha/frontend-project-lvl1/test_coverage)
-
 [![Build Status](https://travis-ci.org/vandrusha/frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/vandrusha/frontend-project-lvl1)
 
 Install package globally:
