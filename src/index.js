@@ -6,7 +6,7 @@ const rounds = 3;
 
 // game engine consists with 3 rounds if answer is correct. If answer is incorrect game ends
 // conditions for answer defined in the game module
-const game = (gameDescription, gameExpression) => {
+const initGame = (gameDescription, gameExpression) => {
   console.log(`Welcome to the Brain Games \n${gameDescription}`);
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hi! ${name}`);
@@ -25,4 +25,4 @@ const game = (gameDescription, gameExpression) => {
   console.log(`Congratulations, ${name}!`);
 };
 
-export default game;
+export default initGame;

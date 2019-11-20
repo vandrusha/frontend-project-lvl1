@@ -1,31 +1,30 @@
 import { cons } from 'hexlet-pairs';
-import game from '..';
-import * as utils from '../utils';
+import initGame from '..';
+import randInt from '../utils';
 
 const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const gameExpression = () => {
-  const gameQuestion = utils.randInt();
-  const correctAnswer = (expression) => {
-    let correct = 'yes';
-    if (expression === 1) {
-      correct = 'yes';
-    } else if (expression === 0 || expression % 2 === 0) {
-      correct = 'no';
-    } else {
-      for (let i = 2; i < expression / 2; i += 1) {
-        if (expression % i === 0) {
-          correct = 'no';
-          break;
-        }
+const isPrime = (expression) => {
+  let divider = 2;
+  if (expression > 2) {
+    for (; divider <= Math.floor(expression / 2);) {
+      if (expression % divider === 0) {
+        break;
+      } else {
+        divider += 1;
       }
     }
-    return correct;
-  };
-  const output = cons(gameQuestion, correctAnswer(gameQuestion));
+  }
+  return expression % divider === 0;
+};
+
+const gameExpression = () => {
+  const gameQuestion = randInt();
+  const correctAnswer = isPrime(gameQuestion) ? 'no' : 'yes';
+  const output = cons(gameQuestion, correctAnswer);
   return output;
 };
 
-const runGame = () => game(gameDescription, gameExpression);
+const runGame = () => initGame(gameDescription, gameExpression);
 
 export default runGame;
