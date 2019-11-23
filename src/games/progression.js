@@ -4,19 +4,22 @@ import randInt from '../utils';
 
 const gameDescription = 'What number is missing in the progression?';
 
+// define progression length
+const progressionLength = 10;
+
 const gameExpression = () => {
   let correctAnswer = '';
-  let firstProgressionValue = randInt(10);
-  const hiddenPosition = randInt(9);
+  let firstProgressionValue = randInt(progressionLength);
+  const hiddenPosition = randInt(progressionLength - 1);
   let gameQuestion = '';
-  const increment = randInt(10, 1);
-  for (let i = 0; i < 10; i += 1) {
+  const increment = randInt(progressionLength);
+  for (let i = 0; i < progressionLength; i += 1) {
     if (i !== hiddenPosition) {
       gameQuestion += `${firstProgressionValue} `;
       firstProgressionValue += increment;
     } else if (i === hiddenPosition) {
       gameQuestion += '.. ';
-      correctAnswer = String(firstProgressionValue);
+      correctAnswer = firstProgressionValue;
       firstProgressionValue += increment;
     }
   }

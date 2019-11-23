@@ -3,11 +3,11 @@ import randInt from '../utils';
 import initGame from '..';
 
 const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
-const divisionBy = (divider) => (expression) => expression % divider === 0;
+const isEven = (value) => value % 2 === 0;
 
 const gameExpression = () => {
   const gameQuestion = randInt();
-  const correctAnswer = divisionBy(2)(gameQuestion) ? 'yes' : 'no';
+  const correctAnswer = isEven(gameQuestion) ? 'yes' : 'no';
   const output = cons(gameQuestion, correctAnswer);
   return output;
 };

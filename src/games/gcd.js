@@ -12,7 +12,7 @@ const gcd = (first, second) => {
       break;
     }
   }
-  return String(divisor);
+  return divisor;
 };
 
 // define range of numbers for the expression
