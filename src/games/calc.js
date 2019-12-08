@@ -5,8 +5,7 @@ import randInt from '../utils';
 const operations = '+-*';
 
 // get random operation
-const operationIndex = operations.length - 1;
-const randOperation = () => operations[randInt(operationIndex)];
+const randOperation = () => operations[randInt(operations.length - 1)];
 
 const correctAnswer = (firstValue, secondValue, operation) => {
   let result;
@@ -20,25 +19,27 @@ const correctAnswer = (firstValue, secondValue, operation) => {
     case '*':
       result = firstValue * secondValue;
       break;
-    default: result = NaN;
+    default: result = null;
   }
   return result;
 };
 
 
 // define the range of numbers in the expression
-const rangeOfNumbers = 10;
+const maxNumber = 10;
+const minNumber = 0;
 const gameDescription = 'What is the result of the expression?';
 
-const gameExpression = () => {
-  const firstOperand = randInt(rangeOfNumbers);
-  const secondOperand = randInt(rangeOfNumbers);
+const getQuestionAnswer = () => {
+  const firstOperand = randInt(maxNumber, minNumber);
+  const secondOperand = randInt(maxNumber, minNumber);
   const initialOperation = randOperation();
   const gameQuestion = `${firstOperand} ${initialOperation} ${secondOperand}`;
-  const output = cons(gameQuestion, correctAnswer(firstOperand, secondOperand, initialOperation));
+  const resultOfCorrectAnswer = correctAnswer(firstOperand, secondOperand, initialOperation);
+  const output = cons(gameQuestion, String(resultOfCorrectAnswer));
   return output;
 };
 
-const runGame = () => initGame(gameDescription, gameExpression);
+const runGame = () => initGame(gameDescription, getQuestionAnswer);
 
 export default runGame;

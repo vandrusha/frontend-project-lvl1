@@ -5,13 +5,13 @@ import initGame from '..';
 const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
 const isEven = (value) => value % 2 === 0;
 
-const gameExpression = () => {
+const getQuestionAnswer = () => {
   const gameQuestion = randInt();
   const correctAnswer = isEven(gameQuestion) ? 'yes' : 'no';
-  const output = cons(gameQuestion, correctAnswer);
+  const output = cons(gameQuestion, String(correctAnswer));
   return output;
 };
 
-const runGame = () => initGame(gameDescription, gameExpression);
+const runGame = () => initGame(gameDescription, getQuestionAnswer);
 
 export default runGame;

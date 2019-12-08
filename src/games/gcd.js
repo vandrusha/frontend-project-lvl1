@@ -19,15 +19,15 @@ const gcd = (first, second) => {
 const upperLimit = 100;
 const bottomLimit = 1;
 
-const gameExpression = () => {
+const getQuestionAnswer = () => {
   const firstValue = randInt(upperLimit, bottomLimit);
   const secondValue = randInt(upperLimit, bottomLimit);
   const gameQuestion = `${firstValue} ${secondValue}`;
   const correctAnswer = gcd(firstValue, secondValue);
-  const output = cons(gameQuestion, correctAnswer);
+  const output = cons(gameQuestion, String(correctAnswer));
   return output;
 };
 
-const runGame = () => initGame(gameDescription, gameExpression);
+const runGame = () => initGame(gameDescription, getQuestionAnswer);
 
 export default runGame;

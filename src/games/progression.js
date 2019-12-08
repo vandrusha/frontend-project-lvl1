@@ -7,7 +7,7 @@ const gameDescription = 'What number is missing in the progression?';
 // define progression length
 const progressionLength = 10;
 
-const gameExpression = () => {
+const getQuestionAnswer = () => {
   let correctAnswer = '';
   let firstProgressionValue = randInt(progressionLength);
   const hiddenPosition = randInt(progressionLength - 1);
@@ -18,15 +18,15 @@ const gameExpression = () => {
       gameQuestion += `${firstProgressionValue} `;
       firstProgressionValue += increment;
     } else if (i === hiddenPosition) {
-      gameQuestion += '.. ';
+      gameQuestion = `${gameQuestion}.. `;
       correctAnswer = firstProgressionValue;
       firstProgressionValue += increment;
     }
   }
-  const output = cons(gameQuestion, correctAnswer);
+  const output = cons(gameQuestion, String(correctAnswer));
   return output;
 };
 
-const runGame = () => initGame(gameDescription, gameExpression);
+const runGame = () => initGame(gameDescription, getQuestionAnswer);
 
 export default runGame;

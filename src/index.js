@@ -6,16 +6,16 @@ const roundsCount = 3;
 
 // game engine consists with 3 rounds if answer is correct. If answer is incorrect game ends
 // conditions for answer defined in the game module
-const initGame = (gameDescription, gameExpression) => {
+const initGame = (gameDescription, getQuestionAnswer) => {
   console.log(`Welcome to the Brain Games \n${gameDescription}`);
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hi! ${name}`);
 
   for (let i = 1; i <= roundsCount; i += 1) {
-    const questionAnswer = gameExpression();
+    const questionAnswer = getQuestionAnswer();
     console.log(`Question: ${car(questionAnswer)}`);
     const answer = readlineSync.question('Your answer: ');
-    if (answer === String(cdr(questionAnswer))) {
+    if (answer === cdr(questionAnswer)) {
       console.log('Correct!');
     } else if (answer !== String(cdr(questionAnswer))) {
       console.log(`"${answer}" is wrong answer ;(. Correct answer was "${cdr(questionAnswer)}"`);
