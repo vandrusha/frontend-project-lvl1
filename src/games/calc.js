@@ -19,11 +19,10 @@ const correctAnswer = (firstValue, secondValue, operation) => {
     case '*':
       result = firstValue * secondValue;
       break;
-    default: result = null;
+    default: return null;
   }
   return result;
 };
-
 
 // define the range of numbers in the expression
 const maxNumber = 10;

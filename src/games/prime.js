@@ -6,13 +6,15 @@ const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer
 
 const isPrime = (number) => {
   let divider = 2;
-  if (number > 2) {
-    for (; divider <= Math.floor(number / 2);) {
-      if (number % divider === 0) {
-        break;
-      } else {
-        divider += 1;
-      }
+  if (number <= 2) {
+    return false;
+  }
+
+  for (; divider <= Math.floor(number / 2);) {
+    if (number % divider === 0) {
+      break;
+    } else {
+      divider += 1;
     }
   }
   return number % divider === 0;

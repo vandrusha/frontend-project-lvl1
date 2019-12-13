@@ -16,11 +16,11 @@ const getQuestionAnswer = () => {
   for (let i = 0; i < progressionLength; i += 1) {
     if (i !== hiddenPosition) {
       gameQuestion += `${firstProgressionValue} `;
-      firstProgressionValue += increment;
+      firstProgressionValue = increment * (i + 1);
     } else if (i === hiddenPosition) {
       gameQuestion = `${gameQuestion}.. `;
       correctAnswer = firstProgressionValue;
-      firstProgressionValue += increment;
+      firstProgressionValue = increment * (i + 1);
     }
   }
   const output = cons(gameQuestion, String(correctAnswer));
