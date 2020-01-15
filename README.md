@@ -4,10 +4,23 @@
 
 [![Build Status](https://travis-ci.org/vandrusha/frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/vandrusha/frontend-project-lvl1)
 
-Install package globally:
+Brain games project incudes the following games:
+calc: find result of the expression
+
+even: check if number is even
+
+gcd: find the greatest common divisor
+
+prime: check if number is prime
+
+progression: find the missing number in the progression
+
+How to install package globally:
+run `npm install -g vandrusha_front-end-project-lvl1`
 [![asciicast](https://asciinema.org/a/mXOB7KpTOxYv9n7ydGrPHMtuw.png)](https://asciinema.org/a/mXOB7KpTOxYv9n7ydGrPHMtuw)
 
-Run brain-games:
+How to play brain-games:
+run brain-${gameName}, enter your name and follow instructions
 [![asciicast](https://asciinema.org/a/TD6vNDPf7wGSg1NjaobmMeF1g.png)](https://asciinema.org/a/TD6vNDPf7wGSg1NjaobmMeF1g)
 
 Play brain-even:

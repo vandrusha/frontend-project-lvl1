@@ -16,12 +16,12 @@ const gcd = (first, second) => {
 };
 
 // define range of numbers for the expression
-const upperLimit = 100;
-const bottomLimit = 1;
+const maxNumber = 100;
+const minNumber = 1;
 
 const getQuestionAnswer = () => {
-  const firstValue = randInt(upperLimit, bottomLimit);
-  const secondValue = randInt(upperLimit, bottomLimit);
+  const firstValue = randInt(maxNumber, minNumber);
+  const secondValue = randInt(maxNumber, minNumber);
   const gameQuestion = `${firstValue} ${secondValue}`;
   const correctAnswer = gcd(firstValue, secondValue);
   const output = cons(gameQuestion, String(correctAnswer));

@@ -4,10 +4,9 @@ import randInt from '../utils';
 
 const operations = '+-*';
 
-// get random operation
-const randOperation = () => operations[randInt(operations.length - 1)];
+const getRandomOperation = () => operations[randInt(operations.length - 1)];
 
-const correctAnswer = (firstValue, secondValue, operation) => {
+const getCorrectAnswer = (firstValue, secondValue, operation) => {
   let result;
   switch (operation) {
     case '-':
@@ -32,10 +31,10 @@ const gameDescription = 'What is the result of the expression?';
 const getQuestionAnswer = () => {
   const firstOperand = randInt(maxNumber, minNumber);
   const secondOperand = randInt(maxNumber, minNumber);
-  const initialOperation = randOperation();
+  const initialOperation = getRandomOperation();
   const gameQuestion = `${firstOperand} ${initialOperation} ${secondOperand}`;
-  const resultOfCorrectAnswer = correctAnswer(firstOperand, secondOperand, initialOperation);
-  const output = cons(gameQuestion, String(resultOfCorrectAnswer));
+  const correctAnswer = getCorrectAnswer(firstOperand, secondOperand, initialOperation);
+  const output = cons(gameQuestion, String(correctAnswer));
   return output;
 };
 

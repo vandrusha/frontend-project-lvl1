@@ -8,21 +8,14 @@ const gameDescription = 'What number is missing in the progression?';
 const progressionLength = 10;
 
 const getQuestionAnswer = () => {
-  let correctAnswer = '';
-  let firstProgressionValue = randInt(progressionLength);
-  const hiddenPosition = randInt(progressionLength - 1);
-  let gameQuestion = '';
+  const firstProgressionValue = randInt(progressionLength);
+  let progressionString = `${firstProgressionValue}`;
   const increment = randInt(progressionLength);
-  for (let i = 0; i < progressionLength; i += 1) {
-    if (i !== hiddenPosition) {
-      gameQuestion += `${firstProgressionValue} `;
-      firstProgressionValue = increment * (i + 1);
-    } else if (i === hiddenPosition) {
-      gameQuestion = `${gameQuestion}.. `;
-      correctAnswer = firstProgressionValue;
-      firstProgressionValue = increment * (i + 1);
-    }
+  const correctAnswer = firstProgressionValue + increment * randInt(progressionLength - 1);
+  for (let i = 1; i < progressionLength; i += 1) {
+    progressionString = `${progressionString} ${firstProgressionValue + increment * i}`;
   }
+  const gameQuestion = progressionString.replace(String(correctAnswer), '..');
   const output = cons(gameQuestion, String(correctAnswer));
   return output;
 };
