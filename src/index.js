@@ -15,10 +15,11 @@ const initGame = (gameDescription, getQuestionAnswer) => {
     const questionAnswer = getQuestionAnswer();
     console.log(`Question: ${car(questionAnswer)}`);
     const answer = readlineSync.question('Your answer: ');
-    if (answer === cdr(questionAnswer)) {
+    const correctAnswer = cdr(questionAnswer);
+    if (answer === correctAnswer) {
       console.log('Correct!');
-    } else if (answer !== cdr(questionAnswer)) {
-      console.log(`"${answer}" is wrong answer ;(. Correct answer was "${cdr(questionAnswer)}"`);
+    } else if (answer !== correctAnswer) {
+      console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}"`);
       console.log(`Let's try again ${name}!`);
       return;
     }

@@ -7,20 +7,15 @@ const operations = '+-*';
 const getRandomOperation = () => operations[randInt(operations.length - 1)];
 
 const getCorrectAnswer = (firstValue, secondValue, operation) => {
-  let result;
   switch (operation) {
     case '-':
-      result = firstValue - secondValue;
-      break;
+      return firstValue - secondValue;
     case '+':
-      result = firstValue + secondValue;
-      break;
+      return firstValue + secondValue;
     case '*':
-      result = firstValue * secondValue;
-      break;
+      return firstValue * secondValue;
     default: return null;
   }
-  return result;
 };
 
 // define the range of numbers in the expression

@@ -8,7 +8,7 @@ const isEven = (value) => value % 2 === 0;
 const getQuestionAnswer = () => {
   const gameQuestion = randInt();
   const correctAnswer = isEven(gameQuestion) ? 'yes' : 'no';
-  const output = cons(gameQuestion, String(correctAnswer));
+  const output = cons(gameQuestion, correctAnswer);
   return output;
 };
 

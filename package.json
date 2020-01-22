@@ -2,7 +2,18 @@
   "name": "vandrusha_front-end-project-lvl1",
   "version": "1.0.15",
   "description": "This package contain os different cli  games. Check if number is even. Provide a calculation result. Find GCD of 2 numbers. Find missed number in progression. Check if number is prime",
-  "keywords": "brain, game, games, brain game, brain games, even, calc, gcd, progression, prime",
+  "keywords": [
+    "brain", 
+    "game", 
+    "games",
+    "brain game", 
+    "brain games", 
+    "even", 
+    "calc",
+    "gcd", 
+    "progression", 
+    "prime"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
@@ -29,8 +40,7 @@
     "eslint": "^6.5.1",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-babel": "^5.3.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jest": "^22.19.0"
+    "eslint-plugin-import": "^2.18.2"
   },
   "dependencies": {
     "hexlet-pairs": "^1.0.8",

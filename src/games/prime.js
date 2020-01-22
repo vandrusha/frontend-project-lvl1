@@ -10,12 +10,8 @@ const isPrime = (number) => {
     return false;
   }
 
-  for (; divider <= Math.floor(number / 2);) {
-    if (number % divider === 0) {
-      break;
-    } else {
-      divider += 1;
-    }
+  while (divider <= Math.floor(number / 2) && number % divider !== 0) {
+    divider += 1;
   }
   return number % divider === 0;
 };
@@ -23,7 +19,7 @@ const isPrime = (number) => {
 const getQuestionAnswer = () => {
   const gameQuestion = randInt();
   const correctAnswer = isPrime(gameQuestion) ? 'no' : 'yes';
-  const output = cons(gameQuestion, String(correctAnswer));
+  const output = cons(gameQuestion, correctAnswer);
   return output;
 };
 
